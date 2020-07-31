@@ -3,7 +3,7 @@
 This project builds on the Lucene library. Modified code can be found in 
 the demo folder of lucene.
 
-
+## Below is the default README of Apache Lucene and Solr. 
 
 
 <!--
@@ -23,7 +23,7 @@ the demo folder of lucene.
     limitations under the License.
  -->
 
-# Apache Lucene and Solr
+## Apache Lucene and Solr
 
 Apache Lucene is a high-performance, full featured text search engine library
 written in Java.
