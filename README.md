@@ -1,3 +1,11 @@
+# CMPT 456 Project 1
+
+This project builds on the Lucene library. Modified code can be found in 
+the demo folder of lucene.
+
+
+
+
 <!--
     Licensed to the Apache Software Foundation (ASF) under one or more
     contributor license agreements.  See the NOTICE file distributed with
