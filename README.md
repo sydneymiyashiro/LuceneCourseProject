@@ -3,7 +3,7 @@
 This project builds on the Lucene library. Modified code can be found in 
 the demo folder of lucene.
 
-## Below is the default README of Apache Lucene and Solr. 
+Below is the default README of Apache Lucene and Solr. 
 
 
 <!--
