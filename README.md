@@ -25,12 +25,12 @@ This program takes some user input (1+ words) and calculates the document freque
 
 ### TFIDF Html Indexing (TFIDFHtmlIndexFiles.java)
 `ant -f lucene/demo/build.xml \
--Ddocs=lucene/demo/data/wiki-small/en/articles/ run-tfidf-html-indexing-demo`
+-Ddocs=lucene/demo/data/wiki-small/en/articles/ run-tfidf-indexing`
 
 This program creates an index using CMPT456Analyzer and CMPT456Similarity. 
 
 ### TFIDF Search Index (TFIDFSearchFiles.java)
-`ant -f lucene/demo/build.xml run-tfidf-search-index-demo`
+`ant -f lucene/demo/build.xml run-tfidf-search`
 
 This program searches the index for query terms using CMPT456Analyzer and CMPT456Similarity.
 Output includes the score using the custom similarity class. 
