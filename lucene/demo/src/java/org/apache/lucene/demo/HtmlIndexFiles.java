@@ -31,6 +31,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.LongPoint;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -94,8 +95,8 @@ public class HtmlIndexFiles {
 
       Directory dir = FSDirectory.open(Paths.get(indexPath));
       
-      // Use custom analyzer 
-      Analyzer analyzer = new CMPT456Analyzer();
+      // Use standard analyzer
+      Analyzer analyzer = new StandardAnalyzer();
       IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
 
       if (create) {
