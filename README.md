@@ -22,8 +22,14 @@ This program uses the StandardAnalyzer and does not modify the Similarity functi
 ### Simple Metrics (SimpleMetrics.java)
 `ant -f lucene/demo/build.xml run-simple-metrics-demo`
 
-This program takes some user input (1+ words) and calculates the document frequency, term frequency for each individual word in the query. Note that this input is changed to lowercase, stopwords are removed, and words are stemmed using the Porter stemmer. 
-Please note, this program must be run after TFIDF Html Indexing for accurate results. Both query input and documents in the index are stemmed and the custom list of stopwords have been removed.
+This program takes some user input (1+ words) and calculates the document frequency, 
+term frequency for each individual word in the query. Note that this input is changed to 
+lowercase, stopwords are removed, and words are stemmed using the Porter stemmer. 
+
+Important: Phrases are split into individual words and frequencies are calculated per-word.
+
+Please note, this program must be run after TFIDF Html Indexing for accurate results. 
+Both query input and documents in the index are stemmed and the custom list of stopwords have been removed.
 
 ### TFIDF Html Indexing (TFIDFHtmlIndexFiles.java)
 `ant -f lucene/demo/build.xml \
@@ -36,6 +42,10 @@ This program creates an index using CMPT456Analyzer and CMPT456Similarity.
 
 This program searches the index for query terms using CMPT456Analyzer and CMPT456Similarity.
 Output includes the score using the custom similarity class. 
+
+Queries may include multiple words. However results will include documents 
+that may contain only one of the input words in them. If input is inside of quotes, 
+then that phrase will be searched and all results will contain that phrase.
 
 
 <!--
