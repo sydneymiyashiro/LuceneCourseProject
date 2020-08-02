@@ -16,12 +16,14 @@ After building the project with `ant -f lucene/core/build.xml; ant -f lucene/dem
 `ant -f lucene/demo/build.xml \
 -Ddocs=lucene/demo/data/wiki-small/en/articles/ run-html-indexing-demo`
 
+This program uses the StandardAnalyzer and does not modify the Similarity function.
+
 
 ### Simple Metrics (SimpleMetrics.java)
 `ant -f lucene/demo/build.xml run-simple-metrics-demo`
 
 This program takes some user input (1+ words) and calculates the document frequency, term frequency for each individual word in the query. Note that this input is changed to lowercase, stopwords are removed, and words are stemmed using the Porter stemmer. 
-
+Please note, this program must be run after TFIDF Html Indexing for accurate results. Both query input and documents in the index are stemmed and the custom list of stopwords have been removed.
 
 ### TFIDF Html Indexing (TFIDFHtmlIndexFiles.java)
 `ant -f lucene/demo/build.xml \
