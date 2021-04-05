@@ -1,6 +1,6 @@
-# CMPT 456 Project 1
+# CMPT 456 Project: Modifying Lucene/Solr.
 
-This project builds on the Lucene library. Modified code can be found in 
+This project builds on the Lucene open source library. Modified code can be found in 
 the demo folder of lucene.
 
 ## How to Run
@@ -16,19 +16,20 @@ After building the project with `ant -f lucene/core/build.xml; ant -f lucene/dem
 `ant -f lucene/demo/build.xml \
 -Ddocs=lucene/demo/data/wiki-small/en/articles/ run-html-indexing-demo`
 
-This program uses the StandardAnalyzer and does not modify the Similarity function.
+This program uses the StandardAnalyzer to create tokens from the result of the HTML parser. 
+Then it converts them to lowercase and filters based on a predefined list of stop-words. 
 
 
 ### Simple Metrics (SimpleMetrics.java)
 `ant -f lucene/demo/build.xml run-simple-metrics-demo`
 
-This program takes some user input (1+ words) and calculates the document frequency, 
-term frequency for each individual word in the query. Note that this input is changed to 
-lowercase, stopwords are removed, and words are stemmed using the Porter stemmer. 
+This program takes some user input (1+ words) and changes it to lowercase, 
+removes stopwords, and applies the Porter stemmer. Finally it outputs the document frequency 
+(number of documents containing the term) and the term frequency (number of occurrences of 
+the term across all documents) for each query word. 
 
 Important: Phrases are split into individual words and frequencies are calculated per-word.
-
-Please note, this program must be run after TFIDF Html Indexing for accurate results. 
+This program must be run after TFIDF Html Indexing for accurate results. 
 Both query input and documents in the index are stemmed and the custom list of stopwords have been removed.
 
 ### TFIDF Html Indexing (TFIDFHtmlIndexFiles.java)
@@ -40,8 +41,8 @@ This program creates an index using CMPT456Analyzer and CMPT456Similarity.
 ### TFIDF Search Index (TFIDFSearchFiles.java)
 `ant -f lucene/demo/build.xml run-tfidf-search`
 
-This program searches the index for query terms using CMPT456Analyzer and CMPT456Similarity.
-Output includes the score using the custom similarity class. 
+This program searches the index for query terms using CMPT456Analyzer and CMPT456Similarity 
+which uses custom tf and idf formulas. Output includes the score using the custom similarity class. 
 
 Queries may include multiple words. However results will include documents 
 that may contain only one of the input words in them. If input is inside of quotes, 
