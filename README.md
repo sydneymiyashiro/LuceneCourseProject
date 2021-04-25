@@ -1,4 +1,4 @@
-# CMPT 456 (Information Retrieval and Web Search) Project: Modifying Lucene/Solr.
+# Information Retrieval and Web Search Course Project: Modifying Lucene/Solr.
 
 This project builds on the Lucene open source library. Modified code can be found in 
 the demo folder of lucene.
